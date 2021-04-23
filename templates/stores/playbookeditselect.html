@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+
+{% block title %}Select{% endblock %}
+
+{% block header %}<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf.html" %}
+
+<div class="row">
+
+<h2> Select Playbook </h2>
+
+  <p> Choose the Playbook from the drop down list </p>
+
+  <form  method="POST" action="{{ url_for('.edit')}}">
+    <select name ="name">
+            {% for n in playbook %}
+              <option value={{n}}>{{n}}</option>
+              {% endfor %}
+    </select>
+    <br>
+    <hr>
+    <button type="submit" class="btn btn-success btn-sm btn-block">Open Project</button>
+</from>
+{% endblock %}

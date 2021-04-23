@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Upload{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf.html" %}
+
+<div class="col-xs-10">
+    <h3>Upload a Playbook</h3>
+
+        <form action = "{{ url_for('.upload') }}" method=post enctype=multipart/form-data>
+            <p> Click the button to start upload process</p>
+            <p><input type=file name=file>
+              <hr>
+            <button type="submit" class="btn btn-success btn-sm btn-block">Upload to Database</button>
+          </form>
+
+</div>
+
+
+
+{% endblock %}

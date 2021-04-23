@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}New Playbook{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf.html" %}
+
+<div class="col-xs-10">
+    <h3>Create New Playbook</h3>
+
+    {% from "_formhelpers.html" import render_field %}
+    <form  method="POST" action="{{ url_for('.new')}}" role="form">
+      {{ form.hidden_tag() }}
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name"><br>
+            <label for="project">Project:</label>
+            <select name ="project" id="project">
+                    {% for proj in switch %}
+                      <option value={{proj}}>{{proj}}</option>
+                      {% endfor %}
+            </select><hr>
+
+            <label for="playbook">Playbook:</label>
+            <textarea class="form-control" id="playbook" rows="10" name="playbook"></textarea><br>
+
+          </div>
+      <button type="submit" class="btn btn-success btn-sm btn-block">Save new playbook</button>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

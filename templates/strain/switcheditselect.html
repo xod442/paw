@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+
+{% block title %}Edit Select {% endblock %}
+
+{% block header %}<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf.html" %}
+
+<div class="row">
+
+<h2> Select a Switch</h2>
+
+  <p> Choose the switch from the drop down list </p>
+
+  <form  method="POST" action="{{ url_for('.switch_edit')}}">
+    <select name ="switch_ip">
+            {% for s in switch %}
+              <option value={{s}}>{{s}}</option>
+              {% endfor %}
+    </select>
+    <br>
+    <hr>
+    <button type="submit" class="btn btn-success btn-sm btn-block">Select Switch</button>
+</from>
+{% endblock %}

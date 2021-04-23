@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% block title %}Switch Delete{% endblock %}
+
+{% block header %}<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf.html" %}
+
+<div class="row">
+
+<h2> Delete Switch</h2>
+
+  <p> Choose the switch from the drop down list CAUTION!!!! Deleteing record is permanent</p>
+
+  <form  method="POST" action="{{ url_for('.switchdelete')}}">
+    <select name ="switch_ip">
+            {% for s in switch %}
+              <option value={{s}}>{{s}}</option>
+              {% endfor %}
+    </select>
+
+
+    <br>
+    <hr>
+    <button type="submit" class="btn btn-success btn-sm btn-block">Delete Switch</button>
+</from>
+{% endblock %}

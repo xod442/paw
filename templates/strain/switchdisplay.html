@@ -1,0 +1,39 @@
+
+{% extends "base.html" %}
+
+{% block title %}Ansible Inventory{% endblock %}
+
+{% block header %}<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf.html" %}
+
+<div class="row">
+
+<h2> Inventory for {{ pod }}</h2>
+<form action = "{{ url_for('main_app.main') }}" method = "get">
+  <textarea class="form-control" rows="15"  name={{pod}}>
+    [ spine ] {% for i in spine %}
+    {{ i }} {% endfor %}
+    [ leaf ] {% for i in leaf %}
+    {{ i }} {% endfor %}
+    [ edge ] {% for i in edge %}
+    {{ i }} {% endfor %}
+    [ distribution ] {% for i in distribution %}
+    {{ i }} {% endfor %}
+    [ database ] {% for i in database %}
+    {{ i }} {% endfor %}
+    [ loadbalancer ] {% for i in loadbalancer %}
+    {{ i }} {% endfor %}
+    [ webserver ] {% for i in webserver %}
+    {{ i }} {% endfor %}
+  </textarea>
+
+
+    <hr>
+    <p> Please retun to main menu </p>
+</from>
+<hr>
+<button type="submit" class="btn btn-success btn-sm btn-block">Main Menu</button>
+{% endblock %}

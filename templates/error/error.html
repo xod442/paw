@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+
+{% block title %}Error{% endblock %}
+
+{% block header %}<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+<h2> Leaf2 System Error</h2>
+<hr>
+<form action="{{ url_for('.main')}}">
+  <hr>
+  {{ error }}
+
+  <br>
+    <p> Please retun to main menu </p>
+    <button type="submit" class="btn btn-success btn-sm btn-block">Main Menu</button>
+</form>
+<hr>
+
+{% endblock %}

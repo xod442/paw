@@ -1,0 +1,27 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}Welcome to Leaf2{% endblock %}
+
+{% block header %}<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+      <div class="container">
+        <hr>
+        <h2>Manager / Client for Leaf2 POTAPI.com</h2>
+        <p>Allows for creating new client, and managing the strain dtatbase</p>
+        <form  method="POST" action="{{ url_for('.main_select')}}">
+          <hr>
+          <p>HOST IP: <input type=text  id="leaf_host" class="form-control" placeholder="10.1.1.1"  name="hostip"></p>
+          <p>Leaf2 User: <input type=text  id="leaf_user" class="form-control" placeholder="Leaf2 User Id"  name="app_id"></p>
+          <p>Leaf2 Password: <input type="password" id="leaf_passwd" class="form-control" placeholder="Password" required name="app_secret"></p>
+          <button class="btn btn-primary btn-sm" type="submit">Login</button>
+
+
+        </form>
+    </div>
+
+{% endblock %}

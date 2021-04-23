@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Error{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf.html" %}
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+
+<ul class="flashes">
+    {% for message in messages %}
+    <p style=  "color:#ff0000;">
+    <li>{{ message}}</li>
+    {% endfor %}
+
+</ul>
+
+{% endif %}
+
+{% endwith %}
+
+<div class="col-xs-10">
+    <h3>System Error</h3>
+    <h2> Error writing to database!</h2>
+    <p> Unknow issues occured...possibly duplicate IP address</p>
+      {{ error }}
+
+  </div>
+
+</div>
+{% endblock %}

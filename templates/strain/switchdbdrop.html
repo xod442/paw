@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+
+{% block title %}Drop Database{% endblock %}
+
+{% block header %}<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf.html" %}
+
+<div class="row">
+
+<h2> DROP DATABASE!!!!!!!!!!</h2>
+
+  <p> This will wipe out the switch database!!!! Danger!!!!</p>
+
+  <form  method="POST" action="{{ url_for('.switch_clear')}}">
+       <button type="submit" class="btn btn-danger btn-sm btn-block">Destroy Switch Database</button>
+  </form>
+{% endblock %}

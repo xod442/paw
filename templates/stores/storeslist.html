@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+
+{% block title %}List Stores{% endblock %}
+
+{% block header %}<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf.html" %}
+
+<div class="row">
+
+<h2> Store List</h2>
+<form action = "{{ url_for('main_app.main') }}" method = "get">
+<div class="container">
+  <table class="table">
+   <thead><tr>
+    <th>Name</th><th>Playbook</th>
+  </tr></thead>
+  <tbody>
+  {% for i in playbook %}
+    <tr>
+      <td>{{ i.name }}</td>
+      <td><textarea class="form-control" rows="5"  name="playbook">{{ i.playbook }}</textarea></td>
+
+    </tr>
+  </tbody>
+
+     {% endfor %}
+    </table>
+</div>
+    <hr>
+    <p> Please retun to main menu </p>
+</from>
+<hr>
+<button type="submit" class="btn btn-success btn-sm btn-block">Main Menu</button>
+{% endblock %}

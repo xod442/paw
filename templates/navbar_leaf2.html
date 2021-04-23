@@ -1,0 +1,44 @@
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+              <div class="row">
+                <ul class="nav nav-tabs">
+
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Stores
+                       <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('stores_app.new') }}">New</a></li>
+                        <li><a href="{{ url_for('stores_app.list') }}">List</a></li>
+                        <li><a href="{{ url_for('stores_app.edit') }}">Edit</a></li>
+                        <li><a href="{{ url_for('stores_app.delete') }}">Delete</a></li>
+                        <li><a href="{{ url_for('stores_app.bulk') }}">Bulk Load</a></li>
+                        <li><a href="{{ url_for('stores_app.copy') }}">Copy</a></li>
+                      </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Strains
+                       <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('strains_app.strainnew') }}">New</a></li>
+                        <li><a href="{{ url_for('strains_app.strainlist') }}">List</a></li>
+                        <li><a href="{{ url_for('strains_app.straindelete') }}">Delete</a></li>
+                        <li><a href="{{ url_for('strains_app.strainedit') }}">Edit</a></li>
+                        <li><a href="{{ url_for('strains_app.strainbulk') }}">Bulk Load</a></li>
+                        <li><a href="{{ url_for('strains_app.straincopy') }}">Copy</a></li>
+                      </ul>
+                  </li>
+
+                   <li>
+                       <a href="http://www.wookieware.com" class="navbar-link">About</a></p>
+                   </li>
+                   <li>
+                       <a href="help" class="navbar-link">Help!</a></p>
+                   </li>
+
+              </ul>
+            </ul>
+        </div>
+    </div>
+</nav>

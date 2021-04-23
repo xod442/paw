@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Error{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf.html" %}
+
+<div class="col-xs-10">
+    <h3>Inventory is required before adding playbooks, templates or projects</h3>
+    <h2> Error Message : {{ error }}</h2>
+
+  </div>
+
+</div>
+{% endblock %}

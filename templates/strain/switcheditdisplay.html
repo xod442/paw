@@ -1,0 +1,33 @@
+
+{% extends "base.html" %}
+
+{% block title %}Update Switch{% endblock %}
+
+{% block header %}<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf.html" %}
+
+<div class="row">
+
+<h2> Edit Switch ==> {{ c[0] }}</h2>
+
+  <p> Enter updated information and select update switch from below </p>
+
+  <form  method="POST" action="{{ url_for('.switchup')}}">
+    <table class="table">
+
+
+      <tr>
+        <td>Mgmt ip: <input type=text class="form-control" value={{ c[0] }} required name="mgmt_ip"></td>
+        <td>Role: <input type=text class="form-control" value={{ c[2] }} required name="role"></td>
+        <td>Model: <input type=text class="form-control" value={{ c[1] }} required name="model"></td>
+        <td>POD: <input type=text class="form-control" value={{ c[3] }} required name="pod"></td>
+        <td>Host: <input type=text class="form-control" value={{ c[4] }} required name="host"></td>
+      </tr>
+    </table>
+    <hr>
+    <button type="submit" class="btn btn-success btn-sm btn-block">Update Switch</button>
+</from>
+{% endblock %}

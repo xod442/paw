@@ -50,6 +50,7 @@ while count <= num_lines:
     store_id = element[7]
 
     out = [name,street_address,city,state,zip,phone,neighborhood,store_id]
+    print(out)
 
 
 

@@ -33,7 +33,7 @@ print(headers)
 
 r = requests.get(store_url, headers=headers)
 r = json.loads(r.text)
-# print(r)
+print(r)
 
 for store in r['stores']:
     print('=========================================')
